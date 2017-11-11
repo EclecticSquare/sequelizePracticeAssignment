@@ -1,5 +1,11 @@
 const Sequelize = require('sequelize');
 
+const express = require('express');
+let app = express();
+let bodyParser = require('bodyParser');
+app.use(bodyParser.json());
+
+
 //  BELOW IS THE VERBOSE WAY TO CONNECT TO SEQUELIZE
 // const sequelize = new Sequelize('sequelize', 'tinabryson', 'tinabryson', {
 //   host:'localhost',
