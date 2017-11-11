@@ -1,9 +1,5 @@
 const Sequelize = require('sequelize');
 
-const express = require('express');
-let app = express();
-let bodyParser = require('bodyParser');
-app.use(bodyParser.json());
 
 
 //  BELOW IS THE VERBOSE WAY TO CONNECT TO SEQUELIZE
@@ -43,7 +39,7 @@ const User = sequelize.define ('user', {
 });
 
 User.sync().then(() => {
-  //table is created here
+  //table is created here when it is the intial one
   return User.create({
     firstName: 'John',
     lastName: 'Hancock'
@@ -51,7 +47,7 @@ User.sync().then(() => {
 });
 
 User.sync().then(() => {
-  //table is created here
+  //creating a new user
   return User.create({
     firstName: 'Ahmed',
     lastName: 'Adoodie'
@@ -59,7 +55,7 @@ User.sync().then(() => {
 });
 
 User.sync().then(() => {
-  //table is created here
+  //creating a new user
   return User.create({
     firstName: 'Maya',
     lastName: 'Butreeks'
@@ -67,7 +63,7 @@ User.sync().then(() => {
 });
 
 User.sync().then(() => {
-  //table is created here
+  //creating a new user
   return User.create({
     firstName: 'Al',
     lastName: 'Bino'
@@ -75,7 +71,7 @@ User.sync().then(() => {
 });
 
 User.sync().then(() => {
-  //table is created here
+  //creating a new user
   return User.create({
     firstName: 'Brock',
     lastName: 'Lee'

@@ -18,14 +18,26 @@ const User = sequelize.define ('user', {
  }
 });
 
-app.get('/users', (request, respond) => {
+app.get('/users', (request, response) => {
   User.findAll().then(users => {
-    respond.send(users)
+    response.send(users)
   })
-
-app.post('/users')
-
 })
+
+
+app.post('/users/create', (request, response) => {
+  console.log(request)
+    //creating a new user
+    let newUser = request.body
+    User.create(
+      newUser
+    ).then((results) =>{
+      response.json(results)
+    } );
+  });
+
+
+
 app.listen(3000, () => {
   console.log('You did it! I am running')
 })

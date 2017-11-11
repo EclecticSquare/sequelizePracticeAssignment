@@ -2,7 +2,7 @@
   "name": "sequelize_intro",
   "version": "1.0.0",
   "description": "",
-  "main": "intialize-users.js",
+  "main": "initialize-users-express.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node initialize-users-express.js"
