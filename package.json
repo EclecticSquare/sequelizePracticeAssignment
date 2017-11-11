@@ -2,10 +2,10 @@
   "name": "sequelize_intro",
   "version": "1.0.0",
   "description": "",
-  "main": "sequelize-testing.js",
+  "main": "intialize-users.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node sequelize-testing.js"
+    "start": "node intialize-users.js"
   },
   "author": "",
   "license": "ISC",
