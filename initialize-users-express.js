@@ -33,8 +33,20 @@ app.post('/users/create', (request, response) => {
       newUser
     ).then((results) =>{
       response.json(results)
-    } );
+    });
   });
+
+
+app.put('users/:id', (request, response) => {
+  User.update(request.body,
+    {
+      where: { id: request.params.id } 
+  }) .then(() => {
+    User.findAll().then((user) => {
+      response.send(user)
+    })
+  })
+})
 
 
 
