@@ -7,13 +7,24 @@ let express = require('express')
 let bodyParser = require('body-parser')
 
 let app = express()
-app.use(bodyParser)
+app.use(bodyParser.json())
 
+const User = sequelize.define ('user', {
+ firstName: {
+   type: Sequelize.STRING
+ },
+ lastName: {
+     type: Sequelize.STRING
+ }
+});
 
+app.get('/users', (request, respond) => {
+  User.findAll().then(users => {
+    respond.send(users)
+  })
 
-app.get('/users', (request, response) => {
-  console.log('I am working')
-  respond.send()
+app.post('/users')
+
 })
 app.listen(3000, () => {
   console.log('You did it! I am running')
