@@ -1,3 +1,4 @@
+
 const Sequelize = require('sequelize');
 //THIS IS THE SHORTHAND WAY OF CONNECTING TO SEQUELIZE  postgres://<password>@localhost:5432/<database-to-connect-to>
 sequelize = new Sequelize('postgres://tinabryson@localhost:5432/sequelize_db')
@@ -38,15 +39,16 @@ app.post('/users/create', (request, response) => {
 
 
 app.put('users/:id', (request, response) => {
-  User.update(request.body,
+  User.update(request.body, () =>
     {
       where: { id: request.params.id } 
   }) .then(() => {
     User.findAll().then((user) => {
       response.send(user)
-    })
-  })
-})
+    });
+  });
+});
+
 
 
 
